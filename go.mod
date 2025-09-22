@@ -3,7 +3,7 @@ module github.com/Phanile/go-exchange-crm
 go 1.23.5
 
 require (
-	github.com/Phanile/go-exchange-protos v0.0.8 // indirect
+	github.com/Phanile/go-exchange-protos v0.0.10 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
 	github.com/nats-io/nats.go v1.45.0 // indirect
 	github.com/nats-io/nkeys v0.4.11 // indirect

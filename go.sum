@@ -2,6 +2,8 @@ github.com/Phanile/go-exchange-protos v0.0.7 h1:PDBlz4FoPcc1DBtoOFKYB2S9OzUkTo4y
 github.com/Phanile/go-exchange-protos v0.0.7/go.mod h1:8M2KSavgy4/Xlx90HtZ0H50TArTWw5wSUvAOXjEy/ow=
 github.com/Phanile/go-exchange-protos v0.0.8 h1:B1J42VAFRsJwZ4tcacgGbH8PiMoanNDFbfkkS56T+T8=
 github.com/Phanile/go-exchange-protos v0.0.8/go.mod h1:8M2KSavgy4/Xlx90HtZ0H50TArTWw5wSUvAOXjEy/ow=
+github.com/Phanile/go-exchange-protos v0.0.10 h1:Rhe+mnmu4VxL4de3pBhvmiU8MwvzzEo9q0gjBKboTZE=
+github.com/Phanile/go-exchange-protos v0.0.10/go.mod h1:8M2KSavgy4/Xlx90HtZ0H50TArTWw5wSUvAOXjEy/ow=
 github.com/klauspost/compress v1.18.0 h1:c/Cqfb0r+Yi+JtIEq73FWXVkRonBlf0CRNYc8Zttxdo=
 github.com/klauspost/compress v1.18.0/go.mod h1:2Pp+KzxcywXVXMr50+X0Q/Lsb43OQHYWRCY2AiWywWQ=
 github.com/nats-io/nats.go v1.45.0 h1:/wGPbnYXDM0pLKFjZTX+2JOw9TQPoIgTFrUaH97giwA=

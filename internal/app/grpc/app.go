@@ -33,7 +33,7 @@ func (a *App) MustRun() {
 }
 
 func (a *App) Run() error {
-	const op = "grpc.app.Run"
+	const op = "grpc.App.Run"
 
 	a.log.With(
 		slog.String("op", op),

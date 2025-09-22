@@ -16,6 +16,7 @@ func main() {
 	application := app.NewApp(log)
 
 	go application.GRPCApp.MustRun()
+	go application.NATSApp.MustRun()
 
 	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, syscall.SIGTERM, syscall.SIGINT)
