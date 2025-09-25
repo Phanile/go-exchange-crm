@@ -8,11 +8,11 @@ import (
 )
 
 type Listing interface {
-	CreateListingRequest(ctx context.Context, req *dto.ListingRequestDTO) error
-	ValidateListingRequest(ctx context.Context, req *dto.ValidateListingDTO) error
-	ApproveListingRequest(ctx context.Context, req *dto.ApproveListingDTO) error
-	RejectListingRequest(ctx context.Context, req *dto.RejectListingDTO) error
-	DelistCoin(ctx context.Context, req *dto.DelistRequestDTO) error
+	CreateListingRequest(req *dto.ListingRequestDTO) error
+	ValidateListingRequest(req *dto.ValidateListingDTO) error
+	ApproveListingRequest(req *dto.ApproveListingDTO) error
+	RejectListingRequest(req *dto.RejectListingDTO) error
+	DelistCoin(req *dto.DelistRequestDTO) error
 }
 
 type ServerAPI struct {
@@ -27,7 +27,7 @@ func Register(server *grpc.Server, listingProvider Listing) {
 }
 
 func (s *ServerAPI) CreateListingRequest(ctx context.Context, req *listingv1.ListingRequest) (*listingv1.ListingResponse, error) {
-	err := s.listingProvider.CreateListingRequest(ctx, dto.ListingRequestFromProto(req))
+	err := s.listingProvider.CreateListingRequest(dto.ListingRequestFromProto(req))
 
 	if err != nil {
 		return &listingv1.ListingResponse{
@@ -41,7 +41,7 @@ func (s *ServerAPI) CreateListingRequest(ctx context.Context, req *listingv1.Lis
 }
 
 func (s *ServerAPI) ValidateListingRequest(ctx context.Context, req *listingv1.ValidateRequest) (*listingv1.ValidateResponse, error) {
-	err := s.listingProvider.ValidateListingRequest(ctx, dto.ValidateRequestFromProto(req))
+	err := s.listingProvider.ValidateListingRequest(dto.ValidateRequestFromProto(req))
 
 	if err != nil {
 		return &listingv1.ValidateResponse{
@@ -55,7 +55,7 @@ func (s *ServerAPI) ValidateListingRequest(ctx context.Context, req *listingv1.V
 }
 
 func (s *ServerAPI) ApproveListingRequest(ctx context.Context, req *listingv1.ApproveRequest) (*listingv1.ApproveResponse, error) {
-	err := s.listingProvider.ApproveListingRequest(ctx, dto.ApproveRequestFromProto(req))
+	err := s.listingProvider.ApproveListingRequest(dto.ApproveRequestFromProto(req))
 
 	if err != nil {
 		return &listingv1.ApproveResponse{
@@ -69,7 +69,7 @@ func (s *ServerAPI) ApproveListingRequest(ctx context.Context, req *listingv1.Ap
 }
 
 func (s *ServerAPI) RejectListingRequest(ctx context.Context, req *listingv1.RejectRequest) (*listingv1.RejectResponse, error) {
-	err := s.listingProvider.RejectListingRequest(ctx, dto.RejectRequestFromProto(req))
+	err := s.listingProvider.RejectListingRequest(dto.RejectRequestFromProto(req))
 
 	if err != nil {
 		return &listingv1.RejectResponse{
@@ -83,7 +83,7 @@ func (s *ServerAPI) RejectListingRequest(ctx context.Context, req *listingv1.Rej
 }
 
 func (s *ServerAPI) DelistCoin(ctx context.Context, req *listingv1.DelistRequest) (*listingv1.DelistResponse, error) {
-	err := s.listingProvider.DelistCoin(ctx, dto.DelistRequestFromProto(req))
+	err := s.listingProvider.DelistCoin(dto.DelistRequestFromProto(req))
 
 	if err != nil {
 		return &listingv1.DelistResponse{
